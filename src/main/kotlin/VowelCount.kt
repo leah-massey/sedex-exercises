@@ -6,7 +6,16 @@ The input string will only consist of lower case letters and/or spaces.*/
 class VowelCount {
 
     fun count(string: String): Int {
-        return 0
+
+        var numberOfVowels: Int = 0
+        val letters: List<String> = string.split("")
+
+        for (i in letters) {
+            if (i == "o") {
+                numberOfVowels += 1
+            }
+        }
+        return numberOfVowels
     }
 
 }

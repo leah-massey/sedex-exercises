@@ -14,4 +14,14 @@ class VowelCountTest {
 
         assertEquals(expected, result)
     }
+
+    @Test
+    fun `a string with one vowel returns 1`() {
+        val underTest = VowelCount()
+        val result: Int = underTest.count("word")
+        val expected: Int = 1
+
+        assertEquals(expected, result)
+    }
+
 }
