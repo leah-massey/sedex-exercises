@@ -7,8 +7,7 @@ class VowelCount {
 
     fun count(string: String): Int {
 
-        var vowels: List<String> = listOf("a", "e", "i", "o", "u")
-
+        val vowels: List<String> = listOf("a", "e", "i", "o", "u")
         var vowelsInString: Int = 0
         val letters: List<String> = string.split("")
 
@@ -17,6 +16,7 @@ class VowelCount {
                 vowelsInString += 1
             }
         }
+
         return vowelsInString
     }
 
