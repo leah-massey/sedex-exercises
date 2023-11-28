@@ -14,7 +14,7 @@ Output string must be two numbers separated by a single space, and highest numbe
 class HighestAndLowest {
 
     fun highAndLow(string: String): String {
-        val numbers = string.split(" ")
+        val numbers = string.split(" ").sortedDescending()
         val highestNumber = numbers[0]
         val lowestNumber = numbers[numbers.size -1]
         return "$highestNumber $lowestNumber"
