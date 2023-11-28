@@ -20,6 +20,7 @@ class GrowthOfAPopulationTest {
 
         assertEquals(expected, result)
     }
+
 }
 
 
