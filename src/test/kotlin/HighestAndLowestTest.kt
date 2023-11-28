@@ -52,6 +52,15 @@ class HighestAndLowestTest {
         assertEquals(expected, result)
     }
 
+    @Test
+    fun `an argument of '2' returns '2 2'`() {
+        val underTest = HighestAndLowest()
+        val result: String = underTest.highAndLow("2")
+        val expected: String = "2 2"
+
+        assertEquals(expected, result)
+    }
+
 
 
 }
