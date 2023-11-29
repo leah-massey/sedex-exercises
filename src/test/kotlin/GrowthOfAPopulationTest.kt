@@ -96,19 +96,19 @@ class GrowthOfAPopulationTest {
             underTest.nbYear(0, 2f, 0, 1)  }
     }
 
-    // alternative way of writing the above test - not sure which is better practise
-//    @Test
-//    fun `A pop of 0 with 0 throws an IllegalArgumentException`() {
-//
-//        assertFailsWith<IllegalArgumentException>(
-//            message = "Your population will never increase.",
-//            block = {
-//                    val underTest = GrowthOfAPopulation()
-//                    underTest.nbYear(0, 2f, 0, 1)
-//            }
-//
-//        )
-//    }
+//     alternative way of writing the above test - not sure which is better practise
+    @Test
+    fun `A pop of 0 with 0 throws an IllegalArgumentException`() {
+
+        assertFailsWith<IllegalArgumentException>(
+            message = "Your population will never increase.",
+            block = {
+                    val underTest = GrowthOfAPopulation()
+                    underTest.nbYear(0, 2f, 0, 1)
+            }
+
+        )
+    }
 
     @Test
     fun `A population of 10 with a percentage increase of 0 and annual increase(aug) of 0 and target population of 11 throws an IllegalArgumentException`() {
@@ -117,8 +117,17 @@ class GrowthOfAPopulationTest {
             underTest.nbYear(10, 0f, 0, 20)  }
     }
 
-    // population target smaller than current
+    @Test
+    fun `A population target below the current population throws an IllegalArgumentException`() {
+        assertFailsWith<IllegalArgumentException>(
+            message = "exception did not work",
+            block = {
+                val underTest = GrowthOfAPopulation()
+                underTest.nbYear(10, 3f, 4, 1)
+            }
+        )
 
+    }
 
 }
 
