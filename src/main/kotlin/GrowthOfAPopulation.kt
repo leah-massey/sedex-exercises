@@ -9,10 +9,14 @@ class GrowthOfAPopulation {
         } else {
             while ( currentPopulation < p) {
                 years += 1
-                currentPopulation = currentPopulation + (currentPopulation * (percent / 100)).toInt()
+                currentPopulation = nextYearsPopulation(currentPopulation, percent)
             }
             return years
         }
 
+    }
+
+    fun nextYearsPopulation(currentPopulation: Int, percent: Float): Int {
+       return currentPopulation + (currentPopulation * (percent / 100)).toInt()
     }
 }
