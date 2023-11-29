@@ -62,14 +62,21 @@ class HighestAndLowestTest {
     }
 
     @Test
-    fun `an argument of '10 20 1 9' returns '20 1'`() {
+    fun `an argument of '10 20 1 15' returns '20 1'`() {
         val underTest = HighestAndLowest()
-        val result: String = underTest.highAndLow("10 20 1 9")
+        val result: String = underTest.highAndLow("10 20 1 15")
         val expected: String = "20 1"
 
         assertEquals(expected, result)
     }
 
+    @Test
+    fun `an argument of '15' returns '15 15'`() {
+        val underTest = HighestAndLowest()
+        val result: String = underTest.highAndLow("15")
+        val expected: String = "15 15"
 
+        assertEquals(expected, result)
+    }
 
 }
