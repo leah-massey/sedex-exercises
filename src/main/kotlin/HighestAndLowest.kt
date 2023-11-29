@@ -13,10 +13,18 @@ Output string must be two numbers separated by a single space, and highest numbe
 
 class HighestAndLowest {
 
-    fun highAndLow(string: String): String {
-        val numbers = string.split(" ").sortedDescending()
-        val highestNumber = numbers[0]
-        val lowestNumber = numbers[numbers.size -1]
+    fun highAndLow(stringOfNumbers: String): String {
+        val listOfNumbersAsString: List<String> = stringOfNumbers.split(" ")
+        var listOfNumbersAsInt: MutableList<Int> = mutableListOf()
+
+        for (i in listOfNumbersAsString) {
+            listOfNumbersAsInt.add(i.toInt())
+        }
+
+        listOfNumbersAsInt.sortDescending()
+
+        val highestNumber = listOfNumbersAsInt[0]
+        val lowestNumber = listOfNumbersAsInt[listOfNumbersAsInt.size -1]
         return "$highestNumber $lowestNumber"
     }
 }
