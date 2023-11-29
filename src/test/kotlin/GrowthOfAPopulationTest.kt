@@ -90,7 +90,7 @@ class GrowthOfAPopulationTest {
     }
 
     @Test
-    fun `A population of 0 with 0 throws an IllegalArgumentException`() {
+    fun `A population of 0 with an annual inscrease(aug) of 0 throws an IllegalArgumentException`() {
         assertFailsWith<IllegalArgumentException> {
             val underTest = GrowthOfAPopulation()
             underTest.nbYear(0, 2f, 0, 1)  }
@@ -109,6 +109,15 @@ class GrowthOfAPopulationTest {
 //
 //        )
 //    }
+
+    @Test
+    fun `A population of 10 with a percentage increase of 0 and annual increase(aug) of 0 and target population of 11 throws an IllegalArgumentException`() {
+        assertFailsWith<IllegalArgumentException> {
+            val underTest = GrowthOfAPopulation()
+            underTest.nbYear(10, 0f, 0, 20)  }
+    }
+
+    // population target smaller than current
 
 
 }
