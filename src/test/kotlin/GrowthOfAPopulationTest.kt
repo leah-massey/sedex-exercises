@@ -47,6 +47,24 @@ class GrowthOfAPopulationTest {
 
         assertEquals(expected, result)
     }
+
+    @Test
+    fun `A population of 1 takes 2 years to reach 2 when percent = 77f and aug = 0`() {
+        // year 0 = 1
+        // year 1 = 1.77
+        // year 2 = 3.13
+
+        val underTest = GrowthOfAPopulation()
+        val expected: Int = 2
+        val result: Int = underTest.nbYear(1, 77f, 0, 2)
+
+        assertEquals(expected, result)
+    }
+
+    // year -> 1
+    // 1 ->
+
+
 }
 
 

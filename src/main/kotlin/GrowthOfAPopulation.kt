@@ -1,13 +1,13 @@
 class GrowthOfAPopulation {
     fun nbYear(p0: Int, percent: Float, aug: Int, p: Int): Int {
 
-        var currentPopulation: Int = p0
+        var currentPopulation: Float = p0.toFloat()
         var years: Int = 0
 
-        if (currentPopulation == p) {
+        if (p0 == p) {
             return 0
         } else {
-            while ( currentPopulation < p) {
+            while ( currentPopulation.toInt() < p) {
                 years += 1
                 currentPopulation = nextYearsPopulation(currentPopulation, percent)
             }
@@ -16,7 +16,7 @@ class GrowthOfAPopulation {
 
     }
 
-    fun nextYearsPopulation(currentPopulation: Int, percent: Float): Int {
-       return currentPopulation + (currentPopulation * (percent / 100)).toInt()
+    fun nextYearsPopulation(currentPopulation: Float, percent: Float): Float {
+       return currentPopulation + (currentPopulation * (percent / 100))
     }
 }
