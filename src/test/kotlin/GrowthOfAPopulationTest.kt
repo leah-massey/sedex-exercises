@@ -1,5 +1,6 @@
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
+import kotlin.test.assertFailsWith
 
 class GrowthOfAPopulationTest {
 
@@ -75,7 +76,7 @@ class GrowthOfAPopulationTest {
     }
 
     @Test
-    fun `A population of 1 takes 3 years to reach 4 when percent = 0-point-8f and aug = 1`() {
+    fun `A population of 1 takes 3 years to reach 4 when percent 0-point-8f and aug = 1`() {
         // year 0 = 1
         // year 1 = 2.008
         // year 2 = 3.024...
@@ -88,7 +89,26 @@ class GrowthOfAPopulationTest {
         assertEquals(expected, result)
     }
 
+    @Test
+    fun `A population of 0 with 0 throws an IllegalArgumentException`() {
+        assertFailsWith<IllegalArgumentException> {
+            val underTest = GrowthOfAPopulation()
+            underTest.nbYear(0, 2f, 0, 1)  }
+    }
 
+    // alternative way of writing the above test - not sure which is better practise
+//    @Test
+//    fun `A pop of 0 with 0 throws an IllegalArgumentException`() {
+//
+//        assertFailsWith<IllegalArgumentException>(
+//            message = "Your population will never increase.",
+//            block = {
+//                    val underTest = GrowthOfAPopulation()
+//                    underTest.nbYear(0, 2f, 0, 1)
+//            }
+//
+//        )
+//    }
 
 
 }
