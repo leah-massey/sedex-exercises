@@ -10,6 +10,7 @@ class GrowthOfAPopulation {
             while ( currentPopulation.toInt() < p) {
                 years += 1
                 currentPopulation = nextYearsPopulation(currentPopulation, percent)
+                currentPopulation += aug
             }
             return years
         }
