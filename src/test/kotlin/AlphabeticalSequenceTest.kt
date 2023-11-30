@@ -23,6 +23,24 @@ class AlphabeticalSequenceTest {
         assertEquals(expected, actual)
     }
 
+    @Test
+    fun `string 'c' returns 'Ccc'`() {
+        val alphabeticalSequence = AlphabeticalSequence()
+        val expected = "Ccc"
+        val actual = alphabeticalSequence.alphaSeq("c")
+
+        assertEquals(expected, actual)
+    }
+    @Test
+    fun `string 'ab' returns 'ABb'`() {
+        val alphabeticalSequence = AlphabeticalSequence()
+        val expected = "ABb"
+        val actual = alphabeticalSequence.alphaSeq("ab")
+
+        assertEquals(expected, actual)
+    }
+
+
     // when you get an uppercase letter
 
 

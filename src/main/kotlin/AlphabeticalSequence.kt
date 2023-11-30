@@ -4,19 +4,20 @@ class AlphabeticalSequence {
     fun alphaSeq(string: String): String {
         val str: String = string
 
-        val chars: List<String> = str.split("")
+        val chars = str.toCharArray()
 
         val finalSeq: MutableList<String> = mutableListOf()
+//
+      for (char in chars) {
+            val firstLetter: Char = char.uppercaseChar()
+            val letterValue: Int = char.code - 97 // eg. 2
+            val letterMultiples: String = char.toString().repeat(letterValue)
 
-        for (char in chars) {
-            val letter: String = char.uppercase()
-            val letterMultiples: String = char
-
-            val completedCharacter: String = "$letter$letterMultiples"
+            val completedCharacter: String = "$firstLetter$letterMultiples"
             finalSeq.add(completedCharacter)
         }
-        println(finalSeq)
-
+//
+//
         return finalSeq.joinToString("")
 
     }
