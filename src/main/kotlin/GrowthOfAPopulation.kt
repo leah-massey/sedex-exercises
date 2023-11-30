@@ -14,15 +14,15 @@ class GrowthOfAPopulation {
         var currentPopulation: Float = p0.toFloat() // I want the value to be a float so that I can calculate any new population increase accurately from the exactly last number.
         var years: Int = 0
 
-        return if (p0 == p) {
-            0
-        } else {
-            while ( currentPopulation.toInt() < p) {
-                years ++
-                currentPopulation = nextYearsPopulation(currentPopulation, percent, aug)
-            }
-            years
+       if (p0 == p) {
+            return 0
         }
+
+        while ( currentPopulation.toInt() < p) {
+            years ++
+            currentPopulation = nextYearsPopulation(currentPopulation, percent, aug)
+        }
+        return years
     }
 
     private fun nextYearsPopulation(currentPopulation: Float, percent: Float, aug: Int): Float {
