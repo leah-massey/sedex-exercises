@@ -2,22 +2,19 @@ import java.lang.Character.UnicodeScript
 
 class AlphabeticalSequence {
     fun alphaSeq(string: String): String {
-        val str: String = string
 
-        val chars = str.toCharArray()
-
+        val chars: CharArray = string.toCharArray()
         val finalSeq: MutableList<String> = mutableListOf()
-//
+
       for (char in chars) {
             val firstLetter: Char = char.uppercaseChar()
-            val letterValue: Int = char.code - 97 // eg. 2
-            val letterMultiples: String = char.toString().repeat(letterValue)
+            val letterCount: Int = char.code - 97 /
+            val letterMultiples: String = char.toString().repeat(letterCount)
 
-            val completedCharacter: String = "$firstLetter$letterMultiples"
-            finalSeq.add(completedCharacter)
+            val completedString: String = "$firstLetter$letterMultiples"
+            finalSeq.add(completedString)
         }
-//
-//
+
         return finalSeq.joinToString("")
 
     }
