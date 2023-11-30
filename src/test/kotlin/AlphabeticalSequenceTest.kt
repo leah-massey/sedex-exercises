@@ -13,14 +13,17 @@ import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 
 class AlphabeticalSequenceTest {
+
     @Test
-    fun `a string is returned in alphabetical order`() {
+    fun `string 'b' returns 'Bb'`() {
         val alphabeticalSequence = AlphabeticalSequence()
-        val expected = "abcde"
-        val actual = alphabeticalSequence.alphaSeq("cdeab")
+        val expected = "Bb"
+        val actual = alphabeticalSequence.alphaSeq("b")
 
         assertEquals(expected, actual)
-
     }
+
+    // when you get an uppercase letter
+
 
 }
