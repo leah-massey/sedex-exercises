@@ -35,8 +35,26 @@ class AlphabeticalSequenceTest {
     @Test
     fun `string 'bcd' returns 'BbCccDddd'`() {
         val alphabeticalSequence = AlphabeticalSequence()
-        val expected = "BbCccDddd"
+        val expected = "Bb,Ccc,Dddd"
         val actual = alphabeticalSequence.alphaSeq("bcd")
+
+        assertEquals(expected, actual)
+    }
+
+    @Test
+    fun `string 'bCd' returns 'BbCccDddd'`() {
+        val alphabeticalSequence = AlphabeticalSequence()
+        val expected = "Bb,Ccc,Dddd"
+        val actual = alphabeticalSequence.alphaSeq("bCd")
+
+        assertEquals(expected, actual)
+    }
+
+    @Test
+    fun `string 'ZpglnRxqenU' returns 'Eeeee,Ggggggg,Llllllllllll,Nnnnnnnnnnnnnn,Nnnnnnnnnnnnnn,Pppppppppppppppp,Qqqqqqqqqqqqqqqqq,Rrrrrrrrrrrrrrrrrr,Uuuuuuuuuuuuuuuuuuuuu,Xxxxxxxxxxxxxxxxxxxxxxxx,Zzzzzzzzzzzzzzzzzzzzzzzzzz'`() {
+        val alphabeticalSequence = AlphabeticalSequence()
+        val expected = "Eeeee,Ggggggg,Llllllllllll,Nnnnnnnnnnnnnn,Nnnnnnnnnnnnnn,Pppppppppppppppp,Qqqqqqqqqqqqqqqqq,Rrrrrrrrrrrrrrrrrr,Uuuuuuuuuuuuuuuuuuuuu,Xxxxxxxxxxxxxxxxxxxxxxxx,Zzzzzzzzzzzzzzzzzzzzzzzzzz"
+        val actual = alphabeticalSequence.alphaSeq("ZpglnRxqenU")
 
         assertEquals(expected, actual)
     }
