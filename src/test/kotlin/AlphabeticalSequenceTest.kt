@@ -31,11 +31,12 @@ class AlphabeticalSequenceTest {
 
         assertEquals(expected, actual)
     }
+
     @Test
-    fun `string 'ab' returns 'ABb'`() {
+    fun `string 'bcd' returns 'BbCccDddd'`() {
         val alphabeticalSequence = AlphabeticalSequence()
-        val expected = "ABb"
-        val actual = alphabeticalSequence.alphaSeq("ab")
+        val expected = "BbCccDddd"
+        val actual = alphabeticalSequence.alphaSeq("bcd")
 
         assertEquals(expected, actual)
     }
