@@ -1,5 +1,9 @@
 class AlphabeticalSequence {
     fun alphaSeq(string: String): String {
-        return "abcde"
+        val str: String = string
+
+        val chars: CharArray = str.toCharArray().sortedArray()
+
+        return chars.joinToString("")
     }
 }
