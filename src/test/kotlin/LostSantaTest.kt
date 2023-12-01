@@ -26,4 +26,22 @@ class LostSantaTest {
 
         assertEquals(expected, actual)
     }
+
+    @Test
+    fun `a single ")" takes santa to floor -1`() {
+        val lostSanta = LostSanta()
+        val expected = -1
+        val actual = lostSanta.findFloor(")")
+
+        assertEquals(expected, actual)
+    }
+
+    @Test
+    fun `an input "()(" takes santa to floor 1`() {
+        val lostSanta = LostSanta()
+        val expected = 1
+        val actual = lostSanta.findFloor("()(")
+
+        assertEquals(expected, actual)
+    }
 }

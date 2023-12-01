@@ -1,5 +1,16 @@
 class LostSanta {
-    fun findFloor(guide: String): Int {
-    return 1
+    fun findFloor(floorMap: String): Int {
+        var instructions: List<Char> = floorMap.toList()
+        var floor: Int = 0
+
+        instructions.forEach {
+            if(it == '(') {
+            floor++
+            } else {
+            floor--
+            }
+        }
+
+        return floor
     }
 }
