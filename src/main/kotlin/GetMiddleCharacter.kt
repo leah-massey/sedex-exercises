@@ -1,5 +1,8 @@
 class GetMiddleCharacter {
     fun getMiddle(str: String): String {
-        return str
+
+        val middleIndex = (str.length -1) /2
+
+        return str[middleIndex].toString()
     }
 }
