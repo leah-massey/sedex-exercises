@@ -20,5 +20,14 @@ class GetMiddleCharacterTest {
         assertEquals(expected, actual)
     }
 
+    @Test
+    fun `an input 'abaa' returns 'ba'`() {
+        val getMiddleCharacter = GetMiddleCharacter()
+        val expected = "ba"
+        val actual = getMiddleCharacter.getMiddle("abaa")
+
+        assertEquals(expected, actual)
+    }
+
 
 }
