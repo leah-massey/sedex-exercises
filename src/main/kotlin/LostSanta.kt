@@ -10,7 +10,6 @@ class LostSanta {
             floor--
             }
         }
-
         return floor
     }
 }

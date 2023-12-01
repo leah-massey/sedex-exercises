@@ -37,10 +37,10 @@ class LostSantaTest {
     }
 
     @Test
-    fun `an input "()(" takes santa to floor 1`() {
+    fun `an input "))(((((" takes santa to floor 3`() {
         val lostSanta = LostSanta()
-        val expected = 1
-        val actual = lostSanta.findFloor("()(")
+        val expected = 3
+        val actual = lostSanta.findFloor("))(((((")
 
         assertEquals(expected, actual)
     }
