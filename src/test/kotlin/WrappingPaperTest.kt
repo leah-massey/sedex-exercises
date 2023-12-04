@@ -37,4 +37,16 @@ class WrappingPaperTest{
         assertEquals(expected, actual)
     }
 
+    @Test
+    fun `a box 1ft x 1ft x 10ft returns 43`() {
+        // 2*1*2 + 2*2*3+ 2*3*1 + 2  =  ? sq feet
+        // 4 + 12 + 6 + 2 = 24
+
+        val underTest = WrappingPaper()
+        val expected = 43
+        val actual = underTest.paperNeeded(1, 1, 10)
+
+        assertEquals(expected, actual)
+    }
+
 }
