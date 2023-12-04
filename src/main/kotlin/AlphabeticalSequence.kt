@@ -26,13 +26,8 @@ class AlphabeticalSequence {
 
             val completedString: String = "$firstLetter$letterMultiples"
             finalSeq.add(completedString)
+
         }
-
-
-
-        println(finalSeq.toList())
-
         return finalSeq.joinToString(",")
-
     }
 }
