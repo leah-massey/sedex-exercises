@@ -50,11 +50,21 @@ class WrappingPaperTest{
     }
 
     @Test
-    fun `returns the total wrapping paper needed for all presents in list`() {
+    fun `returns the total wrapping paper needed for all presents in list of 2 boxes`() {
 
         val underTest = WrappingPaper()
         val expected = 58
         val actual = underTest.paperNeeded(listOf("2x3x4"))
+
+        assertEquals(expected, actual)
+    }
+
+    @Test
+    fun `returns the total wrapping paper needed for all presents in list`() {
+
+        val underTest = WrappingPaper()
+        val expected = 101
+        val actual = underTest.paperNeeded(listOf("2x3x4", "1x1x10"))
 
         assertEquals(expected, actual)
     }
