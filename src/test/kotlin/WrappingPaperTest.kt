@@ -8,7 +8,7 @@ class WrappingPaperTest{
 
         val underTest = WrappingPaper()
         val expected = 7
-        val actual = underTest.paperNeeded(1, 1, 1)
+        val actual = underTest.paperForBox(listOf(1, 1, 1))
 
         assertEquals(expected, actual)
     }
@@ -20,7 +20,7 @@ class WrappingPaperTest{
 
         val underTest = WrappingPaper()
         val expected = 24
-        val actual = underTest.paperNeeded(1, 2, 3)
+        val actual = underTest.paperForBox(listOf(1, 2, 3))
 
         assertEquals(expected, actual)
     }
@@ -32,7 +32,7 @@ class WrappingPaperTest{
 
         val underTest = WrappingPaper()
         val expected = 58
-        val actual = underTest.paperNeeded(2, 3, 4)
+        val actual = underTest.paperForBox(listOf(2, 3, 4))
 
         assertEquals(expected, actual)
     }
@@ -44,7 +44,17 @@ class WrappingPaperTest{
 
         val underTest = WrappingPaper()
         val expected = 43
-        val actual = underTest.paperNeeded(1, 1, 10)
+        val actual = underTest.paperForBox(listOf(1, 1, 10))
+
+        assertEquals(expected, actual)
+    }
+
+    @Test
+    fun `returns the total wrapping paper needed for all presents in list`() {
+
+        val underTest = WrappingPaper()
+        val expected = 58
+        val actual = underTest.paperNeeded(listOf("2x3x4"))
 
         assertEquals(expected, actual)
     }
