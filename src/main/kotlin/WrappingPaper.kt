@@ -1,16 +1,35 @@
 class WrappingPaper {
+
     fun paperNeeded(allBoxes: List<String>): Int {
 
         val requiredPaperSizes: MutableList<Int> = mutableListOf()
 
         allBoxes.map {
-            val boxDimensions = it
+            val boxDimensions: List<Int> = it
                 .split("x")
                 .map{it.toInt()}
 
             requiredPaperSizes.add(paperForBox(boxDimensions))
         }
         return requiredPaperSizes.sum()
+    }
+
+    fun ribbonNeeded(allBoxes: List<String>): Int {
+
+        val requiredRibbonLengths: MutableList<Int> = mutableListOf()
+
+       allBoxes.map {
+           val boxDimensions: List<Int> = it
+            .split("x")
+            .map{it.toInt()}
+
+           val (l, w, h) = boxDimensions.sorted()
+           val requiredLength: Int = (l + l + w + w + (l * w * h))
+
+           requiredRibbonLengths.add(requiredLength)
+        }
+
+        return requiredRibbonLengths.sum()
     }
 
     // this function finds the area for each box
