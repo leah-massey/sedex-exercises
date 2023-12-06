@@ -35,5 +35,14 @@ class CharacterRepeatTest {
         assertEquals(expected, actual)
     }
 
+    @Test
+    fun `a letter of different case is not counted as the same`() {
+        val characterRepeat = CharacterRepeat()
+        val expected = listOf("C", "6")
+        val actual = characterRepeat.longestRepeat("bbCCCCCCcccaaabbaaa")
+
+        assertEquals(expected, actual)
+    }
+
 }
 
