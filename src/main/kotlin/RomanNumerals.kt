@@ -27,6 +27,10 @@ class RomanNumerals {
             romanNum.add("X".repeat(number % 50 / 10))
         }
 
+        if ((number % 10) / 5 >= 1) {  // 2275 => 5 => 1
+            romanNum.add("V")
+        }
+
         return romanNum.joinToString("")
 
     }
