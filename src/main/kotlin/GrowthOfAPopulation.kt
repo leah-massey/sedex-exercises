@@ -11,21 +11,21 @@ class GrowthOfAPopulation {
             throw IllegalArgumentException("Population target must be greater than or equal to current population")
         }
 
-        var currentPopulation: Float = p0.toFloat() // I want the value to be a float so that I can calculate any new population increase accurately from the exactly last number.
+        var currPop: Float = p0.toFloat() // I want the value to be a float so that I can calculate any new population increase accurately from the exactly last number.
         var years: Int = 0
 
        if (p0 == p) {
             return 0
         }
 
-        while ( currentPopulation.toInt() < p) {
+        while ( currPop.toInt() < p) {
             years ++
-            currentPopulation = nextYearsPopulation(currentPopulation, percent, aug)
+            currPop = nextYearsPopulation(currPop, percent, aug)
         }
         return years
     }
 
-    private fun nextYearsPopulation(currentPopulation: Float, percent: Float, aug: Int): Float {
-       return currentPopulation + (currentPopulation * (percent / 100)) + aug
+    private fun nextYearsPopulation(currPop: Float, percent: Float, aug: Int): Float {
+       return currPop + (currPop * (percent / 100)) + aug
     }
 }
