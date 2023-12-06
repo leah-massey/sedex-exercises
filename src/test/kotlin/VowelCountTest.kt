@@ -4,6 +4,7 @@ The input string will only consist of lower case letters and/or spaces.*/
 
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
+import kotlin.test.assertFailsWith
 
 class VowelCountTest {
     @Test
@@ -32,5 +33,10 @@ class VowelCountTest {
 
         assertEquals(expected, result)
     }
+
+//    @Test
+//    fun `and empty string argument will return an exception`() {
+//        assertFailsWith<IllegalArgumentException> {  }
+//    }
 
 }
