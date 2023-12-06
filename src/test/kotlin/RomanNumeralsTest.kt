@@ -47,4 +47,13 @@ class RomanNumeralsTest {
 
         assertEquals(expected, actual)
     }
+
+    @Test
+    fun `an input 2250 returns "MMCCL"`() {
+        val underTest = RomanNumerals()
+        val expected = "MMCCL"
+        val actual = underTest.findRomNum(2250)
+
+        assertEquals(expected, actual)
+    }
 }

@@ -16,9 +16,11 @@ class RomanNumerals {
         }
 
         if ((number % 500) / 100 >= 1) {
-            println("in this line")
             romanNum.add("C".repeat(number % 500 / 100))
-            println(romanNum)
+        }
+
+        if ((number % 100) / 50 >= 1) {
+            romanNum.add("L")
         }
 
         return romanNum.joinToString("")
