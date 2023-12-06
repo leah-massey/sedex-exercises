@@ -1,11 +1,11 @@
 class CharacterRepeat {
-    fun longestRepeat(str: String): Pair<String, Int> {
+    fun longestRepeat(str: String): Pair<String?, Int> {
 
         if (str.isEmpty()) {
-            return Pair("", 0)
+            return Pair(null, 0)
         }
 
-        var groupedChars: MutableList<String> = mutableListOf()
+        val groupedChars: MutableList<String> = mutableListOf()
         var currentGroup = StringBuilder()
 
         // sort letters into groups
@@ -22,13 +22,8 @@ class CharacterRepeat {
         // add final group
         groupedChars.add(currentGroup.toString())
 
-        groupedChars = groupedChars.sorted().toMutableList()
+        val longestRepeatedLetter: String = groupedChars.max()
 
-        val longestLetterRepeat: String = groupedChars[0][0].toString()
-        val longestLetterCount: Int = groupedChars[0].length
-
-
-        return Pair(longestLetterRepeat, longestLetterCount)
+        return Pair(longestRepeatedLetter.substring(0,1), longestRepeatedLetter.length)
     }
-
 }
