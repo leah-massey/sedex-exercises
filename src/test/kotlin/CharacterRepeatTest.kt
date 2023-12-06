@@ -13,8 +13,27 @@ class CharacterRepeatTest {
         val characterRepeat = CharacterRepeat()
         val expected = listOf("", "0")
         val actual = characterRepeat.longestRepeat("")
+
+        assertEquals(expected, actual)
     }
 
+    @Test
+    fun `a string of a single character returns its length`() {
+        val characterRepeat = CharacterRepeat()
+        val expected = listOf("a", "3")
+        val actual = characterRepeat.longestRepeat("aaa")
+
+        assertEquals(expected, actual)
+    }
+
+    @Test
+    fun `a string of a multiple characters returns the longest character repeat`() {
+        val characterRepeat = CharacterRepeat()
+        val expected = listOf("a", "3")
+        val actual = characterRepeat.longestRepeat("bbaaabb")
+
+        assertEquals(expected, actual)
+    }
 
 }
 
