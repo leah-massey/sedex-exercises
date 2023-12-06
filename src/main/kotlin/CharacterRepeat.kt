@@ -1,36 +1,34 @@
 class CharacterRepeat {
-    fun longestRepeat(str: String): List<String> {
+    fun longestRepeat(str: String): Pair<String, Int> {
 
-        // remove edge case
-        if (str == "") {
-            return listOf("", "0")
+        if (str.isEmpty()) {
+            return Pair("", 0)
         }
 
         var groupedChars: MutableList<String> = mutableListOf()
         var currentGroup = StringBuilder()
 
         // sort letters into groups
-        str.forEachIndexed { index, char ->
-            if(index > 0 && char != str[index -1]) {
+        str.forEachIndexed { index, letter ->
+            if(index > 0 && letter != str[index -1]) {
                 // if the character has changed
                 groupedChars.add(currentGroup.toString())
-                currentGroup = StringBuilder().append(char)
+                currentGroup = StringBuilder().append(letter)
             } else {
                 // if the character has stayed the same
-                currentGroup.append(char)
+                currentGroup.append(letter)
             }
         }
         // add final group
         groupedChars.add(currentGroup.toString())
 
-       val groupedCharsInOrder = groupedChars.sorted() // had to created new variable as updating produced an unmutable list
-        val finalResult: MutableList<String> = mutableListOf()
-       finalResult.add(groupedCharsInOrder[0][0].toString())
-       finalResult.add(groupedCharsInOrder[0].length.toString())
+        groupedChars = groupedChars.sorted().toMutableList()
+
+        val longestLetterRepeat: String = groupedChars[0][0].toString()
+        val longestLetterCount: Int = groupedChars[0].length
 
 
-        return finalResult
-
+        return Pair(longestLetterRepeat, longestLetterCount)
     }
 
 }

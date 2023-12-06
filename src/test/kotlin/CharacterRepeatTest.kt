@@ -11,7 +11,7 @@ class CharacterRepeatTest {
     @Test
     fun `an empty string returns ("", 0)`() {
         val characterRepeat = CharacterRepeat()
-        val expected = listOf("", "0")
+        val expected = Pair("", 0)
         val actual = characterRepeat.longestRepeat("")
 
         assertEquals(expected, actual)
@@ -20,7 +20,7 @@ class CharacterRepeatTest {
     @Test
     fun `a string of a single character returns its length`() {
         val characterRepeat = CharacterRepeat()
-        val expected = listOf("a", "3")
+        val expected = Pair("a", 3)
         val actual = characterRepeat.longestRepeat("aaa")
 
         assertEquals(expected, actual)
@@ -29,7 +29,7 @@ class CharacterRepeatTest {
     @Test
     fun `a string of a multiple characters returns the longest character repeat`() {
         val characterRepeat = CharacterRepeat()
-        val expected = listOf("a", "3")
+        val expected = Pair("a", 3)
         val actual = characterRepeat.longestRepeat("bbaaabb")
 
         assertEquals(expected, actual)
@@ -38,7 +38,7 @@ class CharacterRepeatTest {
     @Test
     fun `a letter of different case is not counted as the same`() {
         val characterRepeat = CharacterRepeat()
-        val expected = listOf("C", "6")
+        val expected = Pair("C", 6)
         val actual = characterRepeat.longestRepeat("bbCCCCCCcccaaabbaaa")
 
         assertEquals(expected, actual)
