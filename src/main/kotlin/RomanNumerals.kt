@@ -23,6 +23,10 @@ class RomanNumerals {
             romanNum.add("L")
         }
 
+        if ((number % 50) / 10 >= 1) {  // 2270 => 20 => 2
+            romanNum.add("X".repeat(number % 50 / 10))
+        }
+
         return romanNum.joinToString("")
 
     }
