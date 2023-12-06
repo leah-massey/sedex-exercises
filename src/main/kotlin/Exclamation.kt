@@ -1,5 +1,5 @@
 class Exclamation {
     fun vowelToEx(sentence: String): String {
-       return sentence.map { if (it in "aeiou") '!' else it }.joinToString("")
+       return sentence.map { if (it.lowercase() in "aeiou") '!' else it }.joinToString("")
     }
 }

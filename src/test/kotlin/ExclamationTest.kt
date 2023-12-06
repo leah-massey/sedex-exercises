@@ -20,12 +20,20 @@ class ExclamationTest {
         assertEquals(expected, result)
     }
 
-
     @Test
     fun `it turns a word of all vowels into all exclamation marks`() {
         val underTest = Exclamation()
         val expected  = "!!!!!"
         val result = underTest.vowelToEx("aeiou")
+
+        assertEquals(expected, result)
+    }
+
+    @Test
+    fun `it turns a word of all vowels into exclamation marks regardless of case`() {
+        val underTest = Exclamation()
+        val expected  = "!BCD!"
+        val result = underTest.vowelToEx("ABCDE")
 
         assertEquals(expected, result)
     }
