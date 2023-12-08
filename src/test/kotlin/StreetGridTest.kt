@@ -38,6 +38,13 @@ class StreetGridTest {
         assertEquals(expected, actual)
     }
 
+    @Test
+    fun `R5, L5, R5, R3 leaves you 12 blocks away`() {
+        val underTest = StreetGrid()
+        val expected = 12
+        val actual = underTest.blockDistance(listOf("R5", "L5", "R5", "R3"))
 
+        assertEquals(expected, actual)
+    }
 
 }
