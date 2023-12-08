@@ -19,4 +19,25 @@ class StreetGridTest {
 
         assertEquals(expected, actual)
     }
+
+    @Test
+    fun `Following R2, L3 leaves you 5 blocks away`() {
+        val underTest = StreetGrid()
+        val expected = 5
+        val actual = underTest.blockDistance(listOf("R2", "L3"))
+
+        assertEquals(expected, actual)
+    }
+
+    @Test
+    fun `R2 R2 R2 leaves you 2 blocks due South of your starting position which is 2 blocks away`() {
+        val underTest = StreetGrid()
+        val expected = 2
+        val actual = underTest.blockDistance(listOf("R2", "R2", "R2"))
+
+        assertEquals(expected, actual)
+    }
+
+
+
 }
