@@ -1,38 +1,29 @@
 import kotlin.math.abs
 
 class StreetGrid {
-
     var yValue = 0
     var xValue = 0
     val compassPoints: List<String> = listOf("North", "East", "South", "West")
     var currentDirection: String = compassPoints[0] //"North"
     fun blockDistance(directions: List<String>): Int {
-
         directions.forEach {
-            val distance: Int = it.toList()[1].digitToInt() // get number eg 2
-            val direction = it.toList()[0] // get L or R
-
-            if (direction == 'R') {
-                //change existing direction
-                if (currentDirection == "West") {
-                    currentDirection = "North"
-                } else {
-                    turnClockwise()
+            val distanceToTravel: Int = it.toList()[1].digitToInt()
+            val directionToTurn = it.toList()[0]
+            if (directionToTurn == 'R') {
+                when (currentDirection) {
+                    "West" -> "North"
+                    else -> turnClockwise()
                 }
-                travel(distance)
+                travel(distanceToTravel)
             }
-
-            if (direction == 'L') {
-                // change the existing direction
-                if (currentDirection == "North") {
-                    currentDirection = "West"
-                } else {
-                    turnAntiClockwise()
+            if (directionToTurn == 'L') {
+                when (currentDirection) {
+                    "North" -> "West"
+                    else -> turnAntiClockwise()
                 }
-                travel(distance)
+                travel(distanceToTravel)
             }
         }
-
         return (abs(xValue) + abs(yValue))
     }
 
