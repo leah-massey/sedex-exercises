@@ -16,9 +16,8 @@ class StreetGrid {
                 if (currentDirection == "West") {
                     currentDirection = "North"
                 } else {
-                    currentDirection = compassPoints[compassPoints.indexOf(currentDirection) + 1]
+                    turnClockwise()
                 }
-                // move in the updated direction
                 travel(distance)
             }
 
@@ -27,9 +26,8 @@ class StreetGrid {
                 if (currentDirection == "North") {
                     currentDirection = "West"
                 } else {
-                    currentDirection = compassPoints[compassPoints.indexOf(currentDirection) - 1]
+                    turnAntiClockwise()
                 }
-                // move in the updated direction
                 travel(distance)
             }
         }
@@ -41,6 +39,7 @@ class StreetGrid {
         if (yValue < 0) {
             yValue = yValue * -1
         }
+
         return (xValue + yValue)
     }
 
@@ -54,5 +53,13 @@ class StreetGrid {
         } else if (currentDirection == "West") {
             xValue -= distance
         }
+    }
+
+    fun turnClockwise() {
+        currentDirection = compassPoints[compassPoints.indexOf(currentDirection) + 1]
+    }
+
+    fun turnAntiClockwise() {
+        currentDirection = compassPoints[compassPoints.indexOf(currentDirection) - 1]
     }
 }
