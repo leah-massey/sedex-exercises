@@ -2,7 +2,6 @@ class StreetGrid {
 
     var yValue = 0
     var xValue = 0
-
     val compassPoints: List<String> = listOf("North", "East", "South", "West")
     var currentDirection: String = compassPoints[0] //"North"
     fun blockDistance(directions: List<String>): Int {
@@ -44,14 +43,11 @@ class StreetGrid {
     }
 
     fun travel(distance: Int) {
-        if (currentDirection == "North") {
-            yValue += distance
-        } else if (currentDirection == "South") {
-            yValue -= distance
-        } else if (currentDirection == "East") {
-            xValue += distance
-        } else if (currentDirection == "West") {
-            xValue -= distance
+        when (currentDirection) {
+            "North" -> yValue += distance
+            "South" -> yValue -= distance
+            "East" -> xValue += distance
+            "West" -> xValue -= distance
         }
     }
 
