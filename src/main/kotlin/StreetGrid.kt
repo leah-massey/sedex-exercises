@@ -1,3 +1,5 @@
+import kotlin.math.abs
+
 class StreetGrid {
 
     var yValue = 0
@@ -7,7 +9,7 @@ class StreetGrid {
     fun blockDistance(directions: List<String>): Int {
 
         directions.forEach {
-            val distance: Int = it.toCharArray()[1].digitToInt() // get number eg 2
+            val distance: Int = it.toList()[1].digitToInt() // get number eg 2
             val direction = it.toList()[0] // get L or R
 
             if (direction == 'R') {
@@ -31,15 +33,7 @@ class StreetGrid {
             }
         }
 
-        if (xValue < 0) {
-            xValue = xValue * -1
-        }
-
-        if (yValue < 0) {
-            yValue = yValue * -1
-        }
-
-        return (xValue + yValue)
+        return (abs(xValue) + abs(yValue))
     }
 
     fun travel(distance: Int) {
