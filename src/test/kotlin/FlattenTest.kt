@@ -3,10 +3,14 @@ import org.junit.jupiter.api.Test
 
 class FlattenTest {
     @Test
-    fun `it iterates through a list and returns, flattened`() {
+    fun `a list of 2 returns listOf(2)`() {
         val underTest = Flatten()
-        val expected = listOf(1, 1, 2, 3, 5, 8)
-        val actual = underTest.flatList(listOf(listOf(1, 1), 2, listOf(3, listOf(5, 8))))
+        val expected = listOf(2)
+        val actual = underTest.getFlatList(listOf( 2))
+
+        assertEquals(expected, actual)
     }
 
 }
+
+//listOf(1, 1), 2, listOf(3, listOf(5, 8)))
