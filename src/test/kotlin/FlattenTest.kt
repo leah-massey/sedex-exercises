@@ -7,9 +7,28 @@ class FlattenTest {
         val underTest = Flatten()
         val expected = listOf(2)
         val actual = underTest.getFlatList(listOf( 2))
-
         assertEquals(expected, actual)
     }
+
+
+
+    @Test
+    fun `a listOf(listOf(2)) returns listOf(2)`() {
+        val underTest = Flatten()
+        val expected = listOf(2)
+        val actual = underTest.getFlatList(listOf(listOf(2)))
+        assertEquals(expected, actual)
+    }
+
+    @Test
+    fun `a listOf(listOf(2, listOf(2)) returns listOf(2, 2)`() {
+        val underTest = Flatten()
+        val expected = listOf(2, 2)
+        val actual = underTest.getFlatList(listOf(2, listOf(2)))
+        assertEquals(expected, actual)
+    }
+
+
 
 }
 
