@@ -35,30 +35,13 @@ import org.junit.jupiter.api.Test
 class RomanNumeralsTest {
 
     @Test
-    fun `3 returns III`() {
+    fun `numbers under ten return their roman numeral equivalent`() {
         val underTest = RomanNumerals()
-        val expected = "III"
-        val actual = underTest.findRomNum(3)
 
-        assertEquals(expected, actual)
-    }
-
-    @Test
-    fun `4 returns IV`() {
-        val underTest = RomanNumerals()
-        val expected = "IV"
-        val actual = underTest.findRomNum(4)
-
-        assertEquals(expected, actual)
-    }
-
-    @Test
-    fun `5 returns V`() {
-        val underTest = RomanNumerals()
-        val expected = "V"
-        val actual = underTest.findRomNum(5)
-
-        assertEquals(expected, actual)
+        assertEquals("III", underTest.findRomNum(3))
+        assertEquals("IV", underTest.findRomNum(4))
+        assertEquals("V", underTest.findRomNum(5))
+        assertEquals("VII", underTest.findRomNum(7))
     }
 
 
