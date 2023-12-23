@@ -35,15 +35,13 @@ import org.junit.jupiter.api.Test
 class RomanNumeralsTest {
 
     @Test
-    fun `numbers under ten return their roman numeral equivalent`() {
+    fun `single figure numbers return their roman numeral equivalent`() {
         val underTest = RomanNumerals()
 
         assertEquals("III", underTest.findRomNum(3))
         assertEquals("IV", underTest.findRomNum(4))
         assertEquals("V", underTest.findRomNum(5))
-        assertEquals("VII", underTest.findRomNum(7))
+        assertEquals("VIII", underTest.findRomNum(8))
+        assertEquals("IX", underTest.findRomNum(9))
     }
-
-
-
 }

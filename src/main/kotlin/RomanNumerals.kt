@@ -20,11 +20,14 @@ class RomanNumerals {
             romNumList.add(romNumSymbols[position + 1])
         } else if (number == 5) {
             romNumList.add(romNumSymbols[position + 1])
-        } else {
+        } else if (number > 5 && number < 9){
             romNumList.add(romNumSymbols[position + 1])
             for (i in 6..number) {
                 romNumList.add(romNumSymbols[position])
             }
+        } else {
+            romNumList.add(romNumSymbols[position])
+            romNumList.add(romNumSymbols[position + 2])
         }
 
 
