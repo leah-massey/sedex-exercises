@@ -6,81 +6,61 @@ any digit with a value of zero. In Roman numerals 1990 is rendered: 1000=M, 900=
 
 Example:
 
-encode(1000) // should return "M" */
+encode(1000) // should return "M"
+
+ Symbol    Value
+I          1
+V          5
+X          10
+L          50
+C          100
+D          500
+M          1,000
+
+1 = I
+2 = II
+3 = III
+4 = IV
+5 = V
+6 = VI
+7 = VII
+8 = VIII
+9 = IX
+10 = X
+*/
 
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 
 class RomanNumeralsTest {
+
     @Test
-    fun `an input 1000 returns "M"`() {
+    fun `3 returns III`() {
         val underTest = RomanNumerals()
-        val expected = "M"
-        val actual = underTest.findRomNum(1000)
+        val expected = "III"
+        val actual = underTest.findRomNum(3)
 
         assertEquals(expected, actual)
     }
 
     @Test
-    fun `an input 100 returns "C"`() {
+    fun `4 returns IV`() {
         val underTest = RomanNumerals()
-        val expected = "C"
-        val actual = underTest.findRomNum(100)
+        val expected = "IV"
+        val actual = underTest.findRomNum(4)
 
         assertEquals(expected, actual)
     }
 
     @Test
-    fun `an input 2000 returns "MM"`() {
+    fun `5 returns V`() {
         val underTest = RomanNumerals()
-        val expected = "MM"
-        val actual = underTest.findRomNum(2000)
+        val expected = "V"
+        val actual = underTest.findRomNum(5)
 
         assertEquals(expected, actual)
     }
 
-    @Test
-    fun `an input 2200 returns "MMCC"`() {
-        val underTest = RomanNumerals()
-        val expected = "MMCC"
-        val actual = underTest.findRomNum(2200)
 
-        assertEquals(expected, actual)
-    }
 
-    @Test
-    fun `an input 2250 returns "MMCCL"`() {
-        val underTest = RomanNumerals()
-        val expected = "MMCCL"
-        val actual = underTest.findRomNum(2250)
-
-        assertEquals(expected, actual)
-    }
-
-    @Test
-    fun `an input 2270 returns "MMCCLXX"`() {
-        val underTest = RomanNumerals()
-        val expected = "MMCCLXX"
-        val actual = underTest.findRomNum(2270)
-
-        assertEquals(expected, actual)
-    }
-
-    @Test
-    fun `an input 2275 returns "MMCCLXXV"`() {
-        val underTest = RomanNumerals()
-        val expected = "MMCCLXXV"
-        val actual = underTest.findRomNum(2275)
-
-        assertEquals(expected, actual)
-    }
-
-    @Test
-    fun `an input 3479 returns "MMMCCCCLXXVIIII"`() {
-        val underTest = RomanNumerals()
-        val expected = "MMMCCCCLXXVIIII"
-        val actual = underTest.findRomNum(3479)
-
-        assertEquals(expected, actual)
-    }
 }

@@ -1,41 +1,33 @@
 class RomanNumerals {
-
-
-
-
     fun findRomNum(number: Int): String {
 
-        val romanNum: MutableList<String> = mutableListOf()
+        val romNumSymbols: List<Char> = listOf('I', 'V', 'X')
 
-        if ((number / 1000) >= 1 ) {
-            romanNum.add("M".repeat(number / 1000))
+        // for single values
+        var romNumList: MutableList<Char> = mutableListOf()
+
+        val position: Int = 0
+        if (number < 4) {
+
+            for (i in 1..number) {
+                romNumList.add(romNumSymbols[position])
+
+//                 some other way doing it as a repeat command
+//                (romNumList.add(romNumSymbols[position]).repeat(number).join)
+            }
+        } else if (number == 4) { // number + 1
+            romNumList.add(romNumSymbols[position])
+            romNumList.add(romNumSymbols[position + 1])
+        } else if (number == 5) {
+            romNumList.add(romNumSymbols[position + 1])
+        } else {
+            romNumList.add(romNumSymbols[position + 1])
+            for (i in 6..number) {
+                romNumList.add(romNumSymbols[position])
+            }
         }
 
-        if ((number % 1000) / 500 >= 1) {
-            romanNum.add("D".repeat(number % 1000 / 500))
-        }
 
-        if ((number % 500) / 100 >= 1) {
-            romanNum.add("C".repeat(number % 500 / 100))
-        }
-
-        if ((number % 100) / 50 >= 1) {
-            romanNum.add("L")
-        }
-
-        if ((number % 50) / 10 >= 1) {  // 2270 => 20 => 2
-            romanNum.add("X".repeat(number % 50 / 10))
-        }
-
-        if ((number % 10) / 5 >= 1) {  // 2275 => 5 => 1
-            romanNum.add("V")
-        }
-
-        if (number % 5 >= 1) {  // 2275 => 5 => 1
-            romanNum.add("I".repeat(number % 5))
-        }
-
-        return romanNum.joinToString("")
-
+        return romNumList.joinToString("")
     }
 }
