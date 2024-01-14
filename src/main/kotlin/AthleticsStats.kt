@@ -2,11 +2,12 @@ class AthleticsStats(results: String) {
     val results = results //"00|00|20"
     fun resultsInSecs(): List<Int> {
         val hoursMinsSecs: List<String> = results.split("|")
-        val hours: Int = hoursMinsSecs[0].toInt()
-        val mins: Int = hoursMinsSecs[1].toInt()
+        println(hoursMinsSecs)
+        val hoursAsSecs: Int = hoursMinsSecs[0].toInt()*3600
+        val minsAsSecs: Int = hoursMinsSecs[1].toInt()*60
         val secs: Int = hoursMinsSecs[2].toInt()
 
-        return listOf(hours + mins + secs)
+        return listOf(hoursAsSecs + minsAsSecs + secs)
     }
 
     fun range(): String {
