@@ -44,5 +44,13 @@ class AthleticsStatsTest {
 
         }
 
+        @Test
+        fun `the mean value of a single entry is the single entry`() {
+            val underTest = AthleticsStats("00|20|10")
+            val expected = "00|20|10"
+            val actual = underTest.mean()
+        }
+
+
     }
 }

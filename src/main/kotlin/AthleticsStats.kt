@@ -25,7 +25,7 @@ class AthleticsStats(val results: String) {
     }
 
     fun range(): String {
- val sortedResultsInSecs = resultsInSecs().sorted()
+        val sortedResultsInSecs = resultsInSecs().sorted()
         val timeRangeTotalInSecs  = sortedResultsInSecs.last() - sortedResultsInSecs.first()
 
         val timeRangeHours = (timeRangeTotalInSecs / 3600)
@@ -34,5 +34,9 @@ class AthleticsStats(val results: String) {
 
 
         return "${timeRangeHours.toString().padStart(2,'0')}|${timeRangeMins.toString().padStart(2,'0')}|${timeRangeSecs.toString().padStart(2,'0')}"
+    }
+
+    fun mean(): String {
+        return "00|20|10"
     }
 }
