@@ -51,6 +51,13 @@ class AthleticsStatsTest {
             val actual = underTest.mean()
         }
 
+        @Test
+        fun `returns the mean value of a multiple entries`() {
+            val underTest = AthleticsStats("00|20|10, 00|40|10, 00|30|10")
+            val expected = "00|30|10"
+            val actual = underTest.mean()
+        }
+
 
     }
 }
