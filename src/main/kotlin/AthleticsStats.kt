@@ -36,9 +36,7 @@ class AthleticsStats(val results: String) {
         return "${timeRangeHours.toString().padStart(2,'0')}|${timeRangeMins.toString().padStart(2,'0')}|${timeRangeSecs.toString().padStart(2,'0')}"
     }
 
-    fun mean(): String {
-        val totalSecs = resultsInSecs().sum()/(resultsInSecs().size)
-
+    fun convertToHHMMSS(totalSecs: Int): String {
         val timeRangeHours = (totalSecs / 3600)
         val timeRangeMins = (totalSecs % 3600) / 60
         val timeRangeSecs = (totalSecs % 3600) % 60
@@ -46,6 +44,13 @@ class AthleticsStats(val results: String) {
         return "${timeRangeHours.toString().padStart(2,'0')}|${timeRangeMins.toString().padStart(2,'0')}|${timeRangeSecs.toString().padStart(2,'0')}"
 
 
-        return "00|20|10"
     }
+
+    fun mean(): String {
+        val totalSecs = resultsInSecs().sum()/(resultsInSecs().size)
+
+        return convertToHHMMSS(totalSecs)
+
+    }
+
 }
