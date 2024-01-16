@@ -58,6 +58,13 @@ class AthleticsStatsTest {
             val actual = underTest.mean()
         }
 
+        @Test
+        fun `returns the median value`() {
+            val underTest = AthleticsStats("00|00|10, 00|00|30, 00|00|20, 00|00|40, 00|00|50")
+            val expected = "00|00|30"
+            val actual = underTest.median()
+        }
+
 
     }
 }

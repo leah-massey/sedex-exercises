@@ -48,8 +48,23 @@ class AthleticsStats(val results: String) {
 
     fun mean(): String {
         val totalSecs = resultsInSecs().sum()/(resultsInSecs().size)
-
         return convertToHHMMSS(totalSecs)
+
+    }
+
+    fun median(): String {
+        val sortedResults = resultsInSecs().sorted()
+        if( sortedResults.size % 2 ==0) {
+            val firstMedian = convertToHHMMSS(sortedResults[sortedResults.size/2])
+            val secondMedian = convertToHHMMSS(sortedResults[sortedResults.size/2 +1])
+            return "$firstMedian, $secondMedian"
+        } else {
+            val median = convertToHHMMSS(sortedResults[sortedResults.size/2 +1])
+            return median
+        }
+    }
+
+    fun allResults() {
 
     }
 
