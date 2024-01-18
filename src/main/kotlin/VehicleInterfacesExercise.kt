@@ -1,4 +1,4 @@
-class VehicleInterfaces(val vehiclerepo: VehicleRepoInterface) {
+class VehicleInterfacesExercise(val vehiclerepo: VehicleRepoInterface) {
 
     fun getCountOfVehicles(): Int {
         return vehiclerepo.getListOfVehicles().size
