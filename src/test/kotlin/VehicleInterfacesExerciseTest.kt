@@ -18,7 +18,7 @@ class VehicleInterfacesExerciseTest {
     }
 
     @Test
-    fun `a vehicleRepo that contains 5 vehicle IDs returns 3`() {
+    fun `a vehicleRepo that contains 5 vehicle IDs returns 5`() {
         val mockVehicleRepoThatHasFiveVehicles = object: VehicleInterfacesExercise.VehicleRepoInterface {
             override fun getListOfVehicles(): List<String> {
                 return listOf("audi", "bmw", "porsche", "Toyota", "Nissan")
