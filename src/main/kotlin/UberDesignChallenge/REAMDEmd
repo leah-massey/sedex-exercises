@@ -1,0 +1,27 @@
+// UBER DESIGN CHALLENGE
+//
+//
+// Domain - class - has a function getCountOfVehicles - returns an int
+
+// Backend of domain - vehicleRepo - this should be an interface
+// - function = getListOfVehicles - list of strings (IDS)
+
+/*
+* Domain
+*
+* Design the interface, design domain, don't write the vehicle repo but just
+* create a mock. write two tests, for list of 1 vehicle and list of 0 vehicles.
+*
+*
+*
+*
+* Write 2 tests
+*
+* repo has 3 vehicles - should return a list of three vehicle ids
+*
+* repo has 0 vehicles - should return an empty list.
+*
+*
+*
+*
+* */
