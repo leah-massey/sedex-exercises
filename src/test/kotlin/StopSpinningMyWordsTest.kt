@@ -14,4 +14,17 @@ class StopSpinningMyWordsTest() {
         //then
         assertEquals("Hey", spunSentence)
     }
+
+    @Test
+    fun `a string containing a multi word sentence with each word less than 5 letters long is returned in the same format`() {
+        //given
+        val sentence = "Hey my pal"
+        val underTest = StopSpinningMyWords()
+
+        //when
+        val spunSentence = underTest.spinWords(sentence)
+
+        //then
+        assertEquals("Hey my pal", spunSentence)
+    }
 }
