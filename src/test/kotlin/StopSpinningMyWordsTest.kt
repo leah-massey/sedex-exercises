@@ -27,4 +27,18 @@ class StopSpinningMyWordsTest() {
         //then
         assertEquals("Hey my pal", spunSentence)
     }
+
+    @Test
+    fun `a single word that is longer than 4 letters is returned in reverse `() {
+        //given
+        val sentence = "Controversial"
+        val underTest = StopSpinningMyWords()
+
+        //when
+        val spunSentence = underTest.spinWords(sentence)
+
+        //then
+        assertEquals("laisrevortnoC", spunSentence)
+    }
+
 }
