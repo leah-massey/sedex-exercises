@@ -30,4 +30,17 @@ class CountingDuplicatesTest() {
         //then
         assertEquals(4, actual)
     }
+
+    @Test
+    fun `is not case sensitive`() {
+        //given
+        val text = "helLo"
+        val underTest = CountingDuplicates()
+
+        //when
+        val actual = underTest.duplicateCount(text)
+
+        //then
+        assertEquals(4, actual)
+    }
 }

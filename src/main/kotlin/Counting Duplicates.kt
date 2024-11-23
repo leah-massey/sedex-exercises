@@ -6,7 +6,7 @@ class CountingDuplicates {
         println(letters)
 
         letters.forEach{ letter ->
-            if (!newList.contains(letter)){
+            if (!newList.contains(letter.lowercase())){
                 newList.add(letter)
                 println(newList)
             }
