@@ -19,4 +19,15 @@ class FindTest() {
         //then
         assertEquals(2, actual)
     }
+
+    @Test
+    fun `a list containing only 1 odd value returns the odd value`() {
+        //given
+        val integers = listOf(1,2,4,6,8,10)
+        val undertest = Find()
+        //when
+        val actual = undertest.find(integers)
+        //then
+        assertEquals(1, actual)
+    }
 }
