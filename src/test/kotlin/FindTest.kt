@@ -12,7 +12,7 @@ class FindTest() {
     @Test
     fun `an array of 2 odd integers and one even returns the even integer`() {
         //given
-        val integers = listOf(1,2,3)
+        val integers = arrayOf(1,2,3)
         val undertest = Find()
         //when
         val actual = undertest.find(integers)
@@ -23,7 +23,7 @@ class FindTest() {
     @Test
     fun `a list containing only 1 odd value returns the odd value`() {
         //given
-        val integers = listOf(1,2,4,6,8,10)
+        val integers = arrayOf(1,2,4,6,8,10)
         val undertest = Find()
         //when
         val actual = undertest.find(integers)
