@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test
 // The input string can be assumed to contain only alphabets (both uppercase and lowercase) and numeric digits.
 class CountingDuplicatesTest() {
     @Test
-    fun `a string of unique letters returns the length of the string`() {
+    fun `a string of unique letters returns 0`() {
         //given
         val text = "swathe"
         val underTest = CountingDuplicates()
@@ -15,11 +15,11 @@ class CountingDuplicatesTest() {
         val actual = underTest.duplicateCount(text)
 
         //then
-        assertEquals(6, actual)
+        assertEquals(0, actual)
     }
 
     @Test
-    fun `a string of with duplicated letters only counts the repeated letter once`() {
+    fun `a string of with 1 duplicated letter returns 1`() {
         //given
         val text = "hello"
         val underTest = CountingDuplicates()
@@ -28,7 +28,7 @@ class CountingDuplicatesTest() {
         val actual = underTest.duplicateCount(text)
 
         //then
-        assertEquals(4, actual)
+        assertEquals(1, actual)
     }
 
     @Test
@@ -41,6 +41,6 @@ class CountingDuplicatesTest() {
         val actual = underTest.duplicateCount(text)
 
         //then
-        assertEquals(4, actual)
+        assertEquals(1, actual)
     }
 }
