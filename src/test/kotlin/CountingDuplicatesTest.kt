@@ -17,4 +17,17 @@ class CountingDuplicatesTest() {
         //then
         assertEquals(6, actual)
     }
+
+    @Test
+    fun `a string of with duplicated letters only counts the repeated letter once`() {
+        //given
+        val text = "hello"
+        val underTest = CountingDuplicates()
+
+        //when
+        val actual = underTest.duplicateCount(text)
+
+        //then
+        assertEquals(4, actual)
+    }
 }
