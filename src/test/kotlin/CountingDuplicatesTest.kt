@@ -43,4 +43,19 @@ class CountingDuplicatesTest() {
         //then
         assertEquals(1, actual)
     }
+
+
+
+    @Test
+    fun `handles large arrays`() {
+        //given
+        val text = "8nkvcV6X2XK28nHco0X90HH82hnOv8chH9kXoz20ONOkoZhK0nZ0nKxoooH2x80NnNO"
+        val underTest = CountingDuplicates()
+
+        //when
+        val actual = underTest.duplicateCount(text)
+
+        //then
+        assertEquals(12, actual)
+    }
 }
